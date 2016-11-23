@@ -1,0 +1,31 @@
+
+#textBox
+{
+    font-size:20px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 300px;
+
+}
+
+#container
+{
+    width:300px;
+    margin:auto;
+    margin-top:100px;
+
+    text-align: center;
+}
+
+h3
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:grey;
+}
+
+ul
+{
+    list-style: none;
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:15px;
+}

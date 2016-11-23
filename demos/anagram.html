@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Prefix Tree Demo </title>
+    <script type="text/javascript" src="../js/wordBank.js"></script>
+    <script type="text/javascript" src="../js/prefixTree.js"></script>
+    <script type="text/javascript" src="../js/anagram.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <h3> Anagram Finder </h3>
+        <input id="textBox" list="words" autocomplete="off">
+        <ul id="list"></ul>
+    </div>
+</body>
+
+<script type="text/javascript">
+        
+        tree = new prefixTree()
+        tree.addWords(wordBank)
+
+        document.getElementById("textBox").addEventListener("keyup", handleKeyPress)
+
+        function handleKeyPress(e) {
+
+            var text = e.target.value
+           
+            var anagrams =  findAnagrams(text, tree, 3)
+         
+            anagrams.sort(function(a,b){return a.length - b.length})//sort shortest to longest
+            appendDataList(anagrams, 100)
+        }
+
+        function appendDataList(arr, limit){
+            
+            var list = document.getElementById("list")
+            
+            list.innerHTML = ""
+
+            var counter = 0
+            for (word in arr)
+            {
+                counter += 1
+                if (counter > limit) {return}
+                
+                var item = document.createElement("LI")
+                var txt = document.createTextNode(arr[word])
+
+                item.appendChild(txt)
+                list.appendChild(item)
+            } 
+        }
+    </script>
+
+</html>

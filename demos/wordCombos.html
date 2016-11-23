@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Prefix Tree Demo </title>
+    <script type="text/javascript" src="../js/wordBank.js"></script>
+    <script type="text/javascript" src="../js/prefixTree.js"></script>
+    <script type="text/javascript" src="../js/wordCombos.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <h3> Word Combos </h3>
+        <input id="textBox" list="words" autocomplete="off">
+        <ul id="list"></ul>
+    </div>
+</body>
+
+<script type="text/javascript">
+    tree = new prefixTree()
+    tree.addWords(wordBank)
+
+    document.getElementById("textBox").addEventListener("keyup", handlePress)
+
+    function handlePress(e)
+    {
+        var text = e.target.value
+        document.getElementById("list").innerHTML = ""
+        
+        if(text.length >= 3)
+        {
+            var suggestions = findCombos(text, tree)
+                suggestions.sort(function(a,b){return b.length - a.length})
+                appendDataList(suggestions, suggestions)
+        }
+    }
+
+    function appendDataList(arr, limit)
+    {
+        var list = document.getElementById("list")
+    
+        for (word in arr)
+        {
+            if (arr[word].length >= 3)
+            {
+                    var item = document.createElement("LI")
+                    var txt = document.createTextNode(arr[word])
+
+                    item.appendChild(txt)
+                    list.appendChild(item)
+            }
+        }  
+    }
+</script>
+    
+</html>
