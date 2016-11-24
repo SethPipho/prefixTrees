@@ -13,6 +13,6 @@ represents the ending for a valid word. See [wikipedia] (https://en.wikipedia.or
 Below are three demos of  three common applications of Tries implemented in javascript. Each example uses a Trie constructed 
 from a work bank of roughly 10,000 english words.
 
-* [Anagram Generato] (https://sethpipho.github.io/prefixTrees/demos/anagram.html)
+* [Anagram Generator] (https://sethpipho.github.io/prefixTrees/demos/anagram.html)
 * [Autocomplete] (https://sethpipho.github.io/prefixTrees/demos/autoComplete.html)
 * [Words Combos] (https://sethpipho.github.io/prefixTrees/demos/wordCombos.html)
