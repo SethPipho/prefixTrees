@@ -4,9 +4,9 @@
 
 Each node of a Prefix Tree contains and array of 26 pointers, corresponding to each letter of the alphabet. All
 decendents of node share a common prefix. In addtion, each node cotains a boolean field which determines if the node
-represents the ending for a valid word. See [wikipedia] (https://en.wikipedia.org/wiki/Trie)
+represents the ending for a valid word. See [wikipedia](https://en.wikipedia.org/wiki/Trie)
 
-![Trie] (https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Trie_example.svg/250px-Trie_example.svg.png "Example")
+![Trie](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Trie_example.svg/250px-Trie_example.svg.png)
 
 **Prefix Trees** are very useful for applications involving exstensive word searching. 
 
